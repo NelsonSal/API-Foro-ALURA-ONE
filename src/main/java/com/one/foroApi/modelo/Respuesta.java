@@ -17,23 +17,14 @@ public class Respuesta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String mensaje;
-	private Topico topico;
+	//private Topico topico;
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
-	private Usuario autor;
+	//private Usuario autor;
 	private Boolean solucion = false;
 	
 	public Respuesta() {
 	}
 
-	public Respuesta(Long id, String mensaje, Topico topico, LocalDateTime fechaCreacion, Usuario autor,
-			Boolean solucion) {
-		this.id = id;
-		this.mensaje = mensaje;
-		this.topico = topico;
-		this.fechaCreacion = fechaCreacion;
-		this.autor = autor;
-		this.solucion = solucion;
-	}
 
 	public Long getId() {
 		return id;
@@ -51,13 +42,13 @@ public class Respuesta {
 		this.mensaje = mensaje;
 	}
 
-	public Topico getTopico() {
-		return topico;
-	}
-
-	public void setTopico(Topico topico) {
-		this.topico = topico;
-	}
+//	public Topico getTopico() {
+//		return topico;
+//	}
+//
+//	public void setTopico(Topico topico) {
+//		this.topico = topico;
+//	}
 
 	public LocalDateTime getFechaCreacion() {
 		return fechaCreacion;
@@ -67,13 +58,13 @@ public class Respuesta {
 		this.fechaCreacion = fechaCreacion;
 	}
 
-	public Usuario getAutor() {
-		return autor;
-	}
-
-	public void setAutor(Usuario autor) {
-		this.autor = autor;
-	}
+//	public Usuario getAutor() {
+//		return autor;
+//	}
+//
+//	public void setAutor(Usuario autor) {
+//		this.autor = autor;
+//	}
 
 	public Boolean getSolucion() {
 		return solucion;

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,25 +23,16 @@ public class Topico {
 	private String titulo;
 	private String mensaje;
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
+	@Enumerated(EnumType.STRING)
 	private StatusTopico status = StatusTopico.NO_RESPONDIDO;
-	private Usuario autor;
-	private Curso curso;
-	private List<Respuesta> respuestas = new ArrayList<>();
+	//private Usuario autor;
+	//private Curso curso;
+	//private List<Respuesta> respuestas = new ArrayList<>();
 	
 	public Topico() {
 	}
 
-	public Topico(Long id, String titulo, String mensaje, LocalDateTime fechaCreacion, StatusTopico status,
-			Usuario autor, Curso curso, List<Respuesta> respuestas) {
-		this.id = id;
-		this.titulo = titulo;
-		this.mensaje = mensaje;
-		this.fechaCreacion = fechaCreacion;
-		this.status = status;
-		this.autor = autor;
-		this.curso = curso;
-		this.respuestas = respuestas;
-	}
+
 
 	public Long getId() {
 		return id;
@@ -81,29 +74,29 @@ public class Topico {
 		this.status = status;
 	}
 
-	public Usuario getAutor() {
-		return autor;
-	}
-
-	public void setAutor(Usuario autor) {
-		this.autor = autor;
-	}
-
-	public Curso getCurso() {
-		return curso;
-	}
-
-	public void setCurso(Curso curso) {
-		this.curso = curso;
-	}
-
-	public List<Respuesta> getRespuestas() {
-		return respuestas;
-	}
-
-	public void setRespuestas(List<Respuesta> respuestas) {
-		this.respuestas = respuestas;
-	}
+//	public Usuario getAutor() {
+//		return autor;
+//	}
+//
+//	public void setAutor(Usuario autor) {
+//		this.autor = autor;
+//	}
+//
+//	public Curso getCurso() {
+//		return curso;
+//	}
+//
+//	public void setCurso(Curso curso) {
+//		this.curso = curso;
+//	}
+//
+//	public List<Respuesta> getRespuestas() {
+//		return respuestas;
+//	}
+//
+//	public void setRespuestas(List<Respuesta> respuestas) {
+//		this.respuestas = respuestas;
+//	}
 	
 	
 	
