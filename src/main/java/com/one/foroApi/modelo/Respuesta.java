@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
@@ -27,6 +29,19 @@ public class Respuesta {
 	
 	public Respuesta() {
 	}
+	
+
+
+	public Respuesta(Long id, String mensaje, Topico topico, LocalDateTime fechaCreacion, Usuario autor,
+			Boolean solucion) {
+		this.id = id;
+		this.mensaje = mensaje;
+		this.topico = topico;
+		this.fechaCreacion = fechaCreacion;
+		this.autor = autor;
+		this.solucion = solucion;
+	}
+
 
 
 	public Long getId() {

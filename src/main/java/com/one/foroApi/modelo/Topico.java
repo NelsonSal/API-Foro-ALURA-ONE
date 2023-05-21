@@ -31,7 +31,7 @@ public class Topico {
 	private Usuario autor;
 	@OneToOne
 	private Curso curso;
-	@OneToMany
+	@OneToMany(mappedBy = "topico")
 	private List<Respuesta> respuestas = new ArrayList<>();
 	
 	public Topico() {
