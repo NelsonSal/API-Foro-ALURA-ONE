@@ -63,7 +63,7 @@ public class Topico {
 		this.autor =  datosRegistroTopico.autor();
 		this.curso = datosRegistroTopico.curso();
 	}
-
+	
 
 
 	public Long getId() {

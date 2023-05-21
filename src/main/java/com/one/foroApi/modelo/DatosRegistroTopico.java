@@ -17,6 +17,11 @@ public record DatosRegistroTopico(
 		Usuario autor,
 		Curso curso
 		) {
+	
+
 
 
 }
+
+
+

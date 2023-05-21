@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.one.foroApi.Repository.TopicoRepository;
+import com.one.foroApi.modelo.DatosListadoTopico;
 import com.one.foroApi.modelo.DatosRegistroTopico;
 import com.one.foroApi.modelo.Topico;
 
@@ -35,8 +36,8 @@ public class TopicoController {
 				
 	}
 	@GetMapping
-	public List<Topico> listadoTopicos(){
-		return topicoRepository.findAll();
+	public List<DatosListadoTopico> listadoTopicos(){
+		return topicoRepository.findAll().stream().map(DatosListadoTopico::new).toList();
 	}
 	
 	
