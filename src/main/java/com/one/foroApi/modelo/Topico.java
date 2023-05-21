@@ -10,6 +10,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -27,9 +28,11 @@ public class Topico {
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
 	@Enumerated(EnumType.STRING)
 	private StatusTopico status = StatusTopico.NO_RESPONDIDO;
-	@OneToOne
+	//@OneToOne funcionaba 1
+	@ManyToOne
 	private Usuario autor;
-	@OneToOne
+	//@OneToOne funcionaba 1
+	@ManyToOne
 	private Curso curso;
 	@OneToMany(mappedBy = "topico")
 	private List<Respuesta> respuestas = new ArrayList<>();
