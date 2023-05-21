@@ -53,6 +53,16 @@ public class Topico {
 
 
 
+	public Topico(DatosRegistroTopico datosRegistroTopico) {
+		this.titulo = datosRegistroTopico.titulo();
+		this.mensaje =datosRegistroTopico.mensaje();
+		this.fechaCreacion = LocalDateTime.now();
+		this.autor =  datosRegistroTopico.autor();
+		this.curso = datosRegistroTopico.curso();
+	}
+
+
+
 	public Long getId() {
 		return id;
 	}
