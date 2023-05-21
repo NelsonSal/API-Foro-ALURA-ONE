@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 
@@ -17,9 +18,11 @@ public class Respuesta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String mensaje;
-	//private Topico topico;
+	@OneToOne
+	private Topico topico;
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
-	//private Usuario autor;
+	@OneToOne
+	private Usuario autor;
 	private Boolean solucion = false;
 	
 	public Respuesta() {
@@ -42,13 +45,13 @@ public class Respuesta {
 		this.mensaje = mensaje;
 	}
 
-//	public Topico getTopico() {
-//		return topico;
-//	}
-//
-//	public void setTopico(Topico topico) {
-//		this.topico = topico;
-//	}
+	public Topico getTopico() {
+		return topico;
+	}
+
+	public void setTopico(Topico topico) {
+		this.topico = topico;
+	}
 
 	public LocalDateTime getFechaCreacion() {
 		return fechaCreacion;
@@ -58,13 +61,13 @@ public class Respuesta {
 		this.fechaCreacion = fechaCreacion;
 	}
 
-//	public Usuario getAutor() {
-//		return autor;
-//	}
-//
-//	public void setAutor(Usuario autor) {
-//		this.autor = autor;
-//	}
+	public Usuario getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Usuario autor) {
+		this.autor = autor;
+	}
 
 	public Boolean getSolucion() {
 		return solucion;
