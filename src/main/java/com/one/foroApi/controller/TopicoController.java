@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,13 +53,22 @@ public class TopicoController {
 				topico.getStatus(),topico.getAutor().getNombre(),topico.getCurso().getNombre());
 		return ResponseEntity.ok(datosTopico);
 	}	
-//TODO marca error cuando el id no existe
+	//TODO marca error cuando el id no existe
 	
 	@PutMapping("/{id}")
 	@Transactional
 	public void modificarTopico(@PathVariable Long id, @RequestBody DatosActualizarTopico datosActualizarTopico) {
 		Topico topico = topicoRepository.getReferenceById(id); 
 		topico.actualizarDatos(datosActualizarTopico);
+	}
+	
+	@DeleteMapping("/{id}")
+	@Transactional
+	public void eliminarTopico(@PathVariable Long id) {
+//		Topico topico = topicoRepository.getReferenceById(id);
+//		topicoRepository.delete(topico); 
+		topicoRepository.deleteById(id);
+		
 	}
 	
 	
