@@ -7,14 +7,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.service.annotation.PutExchange;
 
 import com.one.foroApi.Repository.TopicoRepository;
+import com.one.foroApi.modelo.DatosActualizarTopico;
 import com.one.foroApi.modelo.DatosListadoTopico;
 import com.one.foroApi.modelo.DatosRegistroTopico;
 import com.one.foroApi.modelo.Topico;
+
+import jakarta.transaction.Transactional;
 
 @RestController
 @RequestMapping("/topicos")
@@ -44,11 +49,18 @@ public class TopicoController {
 	@GetMapping("/{id}")
 	public ResponseEntity<DatosListadoTopico> listarUnTopico(@PathVariable Long id){
 		Topico topico = topicoRepository.getReferenceById(id);
-		var datosTopico=new DatosListadoTopico(topico.getTitulo(),topico.getMensaje(),topico.getFechaCreacion(),
+		var datosTopico=new DatosListadoTopico(topico.getId(),topico.getTitulo(),topico.getMensaje(),topico.getFechaCreacion(),
 				topico.getStatus(),topico.getAutor().getNombre(),topico.getCurso().getNombre());
 		return ResponseEntity.ok(datosTopico);
 	}	
-//TODO marca error cuando el id no existe	
+//TODO marca error cuando el id no existe
+	
+	@PutMapping
+	@Transactional
+	public void modificarTopico(@RequestBody DatosActualizarTopico datosActualizarTopico) {
+		Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.id()); 
+		topico.actualizarDatos(datosActualizarTopico);
+	}
 	
 	
 }
