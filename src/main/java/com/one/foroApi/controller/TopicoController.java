@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.PutExchange;
 
 import com.one.foroApi.Repository.TopicoRepository;
 import com.one.foroApi.modelo.DatosActualizarTopico;
@@ -55,10 +54,10 @@ public class TopicoController {
 	}	
 //TODO marca error cuando el id no existe
 	
-	@PutMapping
+	@PutMapping("/{id}")
 	@Transactional
-	public void modificarTopico(@RequestBody DatosActualizarTopico datosActualizarTopico) {
-		Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.id()); 
+	public void modificarTopico(@PathVariable Long id, @RequestBody DatosActualizarTopico datosActualizarTopico) {
+		Topico topico = topicoRepository.getReferenceById(id); 
 		topico.actualizarDatos(datosActualizarTopico);
 	}
 	
