@@ -1,8 +1,13 @@
-package com.one.foroApi.modelo;
+package com.one.foroApi.modelo.topico;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.one.foroApi.modelo.StatusTopico;
+import com.one.foroApi.modelo.curso.Curso;
+import com.one.foroApi.modelo.respuesta.Respuesta;
+import com.one.foroApi.modelo.usuario.Usuario;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

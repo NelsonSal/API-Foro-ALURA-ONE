@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.one.foroApi.Repository.UsuarioRepository;
-import com.one.foroApi.modelo.DatosRegistroUsuario;
-import com.one.foroApi.modelo.Usuario;
+import com.one.foroApi.modelo.usuario.DatosRegistroUsuario;
+import com.one.foroApi.modelo.usuario.Usuario;
 
 @RestController
 @RequestMapping("/usuarios")

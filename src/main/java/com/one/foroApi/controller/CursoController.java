@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.one.foroApi.Repository.CursoRepository;
-import com.one.foroApi.modelo.Curso;
-import com.one.foroApi.modelo.DatosRegistroCurso;
+import com.one.foroApi.modelo.curso.Curso;
+import com.one.foroApi.modelo.curso.DatosRegistroCurso;
 
 @RestController
 @RequestMapping("/cursos")

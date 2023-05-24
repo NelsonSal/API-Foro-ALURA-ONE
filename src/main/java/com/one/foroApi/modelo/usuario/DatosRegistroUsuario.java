@@ -1,4 +1,4 @@
-package com.one.foroApi.modelo;
+package com.one.foroApi.modelo.usuario;
 
 
 

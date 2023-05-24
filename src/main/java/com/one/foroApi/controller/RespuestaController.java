@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.one.foroApi.Repository.RespuestaRepository;
-import com.one.foroApi.modelo.DatosRegistroRespuesta;
-import com.one.foroApi.modelo.Respuesta;
+import com.one.foroApi.modelo.respuesta.DatosRegistroRespuesta;
+import com.one.foroApi.modelo.respuesta.Respuesta;
 
 @RestController
 @RequestMapping("/respuestas")

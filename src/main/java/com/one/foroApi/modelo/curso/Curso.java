@@ -1,4 +1,4 @@
-package com.one.foroApi.modelo;
+package com.one.foroApi.modelo.curso;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

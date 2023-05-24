@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.one.foroApi.Repository.TopicoRepository;
-import com.one.foroApi.modelo.DatosActualizarTopico;
-import com.one.foroApi.modelo.DatosListadoTopico;
-import com.one.foroApi.modelo.DatosRegistroTopico;
-import com.one.foroApi.modelo.Topico;
+import com.one.foroApi.modelo.topico.DatosActualizarTopico;
+import com.one.foroApi.modelo.topico.DatosListadoTopico;
+import com.one.foroApi.modelo.topico.DatosRegistroTopico;
+import com.one.foroApi.modelo.topico.Topico;
 
 import jakarta.transaction.Transactional;
 

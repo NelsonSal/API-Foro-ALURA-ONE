@@ -1,6 +1,8 @@
-package com.one.foroApi.modelo;
+package com.one.foroApi.modelo.topico;
 
 import java.time.LocalDateTime;
+
+import com.one.foroApi.modelo.StatusTopico;
 
 public record DatosListadoTopico(
 				Long id,

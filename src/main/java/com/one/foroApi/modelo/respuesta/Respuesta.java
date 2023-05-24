@@ -1,6 +1,9 @@
-package com.one.foroApi.modelo;
+package com.one.foroApi.modelo.respuesta;
 
 import java.time.LocalDateTime;
+
+import com.one.foroApi.modelo.topico.Topico;
+import com.one.foroApi.modelo.usuario.Usuario;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
