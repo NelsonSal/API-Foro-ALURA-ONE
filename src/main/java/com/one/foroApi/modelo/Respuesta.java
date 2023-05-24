@@ -7,8 +7,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 
@@ -20,10 +18,10 @@ public class Respuesta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String mensaje;
-	@OneToOne
+	@ManyToOne
 	private Topico topico;
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
-	@OneToOne
+	@ManyToOne
 	private Usuario autor;
 	private Boolean solucion = false;
 	
@@ -40,6 +38,15 @@ public class Respuesta {
 		this.fechaCreacion = fechaCreacion;
 		this.autor = autor;
 		this.solucion = solucion;
+	}
+
+
+
+	public Respuesta(DatosRegistroRespuesta datosRegistroRespuesta) {
+		this.mensaje = datosRegistroRespuesta.mensaje();
+		this.topico = datosRegistroRespuesta.topico();
+		this.fechaCreacion = LocalDateTime.now();
+		this.autor = datosRegistroRespuesta.autor();
 	}
 
 

@@ -12,7 +12,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 
@@ -28,10 +27,8 @@ public class Topico {
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
 	@Enumerated(EnumType.STRING)
 	private StatusTopico status = StatusTopico.NO_RESPONDIDO;
-	//@OneToOne funcionaba 1
 	@ManyToOne
 	private Usuario autor;
-	//@OneToOne funcionaba 1
 	@ManyToOne
 	private Curso curso;
 	@OneToMany(mappedBy = "topico")
@@ -64,7 +61,22 @@ public class Topico {
 		this.curso = datosRegistroTopico.curso();
 	}
 	
-
+	public void actualizarDatos(DatosActualizarTopico datosActualizarTopico) {
+		if(datosActualizarTopico.titulo()!=null) {//Estos if permiten que falten parametros para actualizar
+			this.titulo = datosActualizarTopico.titulo();
+		}
+		if(datosActualizarTopico.mensaje()!=null) {
+			this.mensaje = datosActualizarTopico.mensaje();	
+		}
+		if(datosActualizarTopico.autor()!=null) {
+			this.autor = datosActualizarTopico.autor();
+		}
+		if(datosActualizarTopico.curso()!=null) {
+			this.curso = datosActualizarTopico.curso();
+		}
+	
+		
+	}
 
 	public Long getId() {
 		return id;
@@ -132,22 +144,7 @@ public class Topico {
 
 
 
-	public void actualizarDatos(DatosActualizarTopico datosActualizarTopico) {
-		if(datosActualizarTopico.titulo()!=null) {//Estos if permiten que falten parametros para actualizar
-			this.titulo = datosActualizarTopico.titulo();
-		}
-		if(datosActualizarTopico.mensaje()!=null) {
-			this.mensaje = datosActualizarTopico.mensaje();	
-		}
-		if(datosActualizarTopico.autor()!=null) {
-			this.autor = datosActualizarTopico.autor();
-		}
-		if(datosActualizarTopico.curso()!=null) {
-			this.curso = datosActualizarTopico.curso();
-		}
-	
-		
-	}
+
 	
 	
 	
