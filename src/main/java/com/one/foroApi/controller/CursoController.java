@@ -10,6 +10,8 @@ import com.one.foroApi.Repository.CursoRepository;
 import com.one.foroApi.modelo.curso.Curso;
 import com.one.foroApi.modelo.curso.DatosRegistroCurso;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/cursos")
 public class CursoController {
@@ -18,7 +20,7 @@ public class CursoController {
 	
 	
 	@PostMapping
-	public void registrarCurso(@RequestBody DatosRegistroCurso datosRegistroCurso) {
+	public void registrarCurso(@RequestBody @Valid DatosRegistroCurso datosRegistroCurso) {
 		cursoRepository.save(new Curso(datosRegistroCurso));
 		
 	}
