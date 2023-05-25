@@ -18,6 +18,10 @@ import lombok.EqualsAndHashCode;
 @Table(name="accesos")
 @EqualsAndHashCode(of="id")
 public class Acceso implements UserDetails{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID;
