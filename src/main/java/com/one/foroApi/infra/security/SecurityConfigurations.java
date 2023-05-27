@@ -18,6 +18,20 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 public class SecurityConfigurations {
+	  private static final String[] AUTH_WHITELIST = {
+	            "/auth/**",
+	            "/v2/api-docs",
+	            "/v3/api-docs",
+	            "/v3/api-docs/**",
+	            "/swagger-resources",
+	            "/swagger-resources/**",
+	            "/configuration/ui",
+	            "/configuration/security",
+	            "/swagger-ui/**",
+	            "/webjars/**",
+	            "/swagger-ui.html",
+	            "/login"
+	    };
 	
     @Autowired
     private SecurityFilter securityFilter;
@@ -29,7 +43,7 @@ public class SecurityConfigurations {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers(HttpMethod.POST, "/login")
+                .requestMatchers(AUTH_WHITELIST)
                 .permitAll()
                 .anyRequest()
                 .authenticated()
