@@ -16,10 +16,11 @@
   - [Token JWT](https://jwt.io/)
   - [Swagger](https://swagger.io)
 
-       <img width="200" heigth="200" src="https://user-images.githubusercontent.com/91544872/209678377-70b50b21-33de-424c-bed8-6a71ef3406ff.png">
-              <img width="200" heigth="200" src="https://raw.githubusercontent.com/NelsonSal/API-Foro-ALURA-ONE
-/main/assets/swagger.png">
-       
- ### ¡Realizado por Nelson Salguero Programa ONE - Alura G4!       
+<p align="center" >
+          <img width="800" heigth="800" src="https://github.com/NelsonSal/API-Foro-ALURA-ONE/blob/main/swagger.png">
+ </p> 
+ 
+ ### ¡Realizado por Nelson Salguero Programa ONE - Alura G4! 
+ 
 
   
